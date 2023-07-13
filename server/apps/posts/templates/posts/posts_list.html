@@ -1,7 +1,25 @@
+{% extends "posts/base.html" %}
+
+{% block content %}
+
 <a href="/posts/create/">글 작성하러 가기✏️</a>
 
+<form action="/" method="get">
+    <input name="text" placeholder="검색하기" />
+
+    <input name="min_price" type="number" placeholder="최소 가격" />
+    ~
+    <input name="max_price" type="number" placeholder="최대 가격" />
+    <input type="submit" value="검색" />
+</form>
+
+<hr />
+<a href="/posts/like">좋아요 목록</a>
+<hr />
 {% for post in posts %}
 <h3><a href="/posts/{{ post.pk }}">{{ post.title }}</a></h3>
 <p>{{ post.region }}</p>
 <hr />
 {% endfor %}
+
+{% endblock %}

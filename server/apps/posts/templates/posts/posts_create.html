@@ -1,3 +1,6 @@
+{% extends "posts/base.html" %}
+
+{% block content %}
 <h1>글 작성하기</h1>
 
 <form action="/posts/create/" method="post">
@@ -15,3 +18,4 @@
         <input type="submit" value="작성완료">
     </div>
 </form>
+{% endblock %}

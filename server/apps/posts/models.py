@@ -10,3 +10,6 @@ class Post(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+class Like(models.Model):
+    post_id = models.IntegerField()
