@@ -1,0 +1,24 @@
+<h1>{{ post.title }}</h1>
+<small>작성자: {{ post.user }}</small>
+<br />
+<small>지역: {{ post.region }}</small>
+<br />
+<small>가격: {{ post.price }}원</small>
+<br />
+<br />
+<p>{{ post.content }}</p>
+<br />
+<small>작성일: {{ post.created_at }}</small>
+<br />
+<small>수정일: {{ post.updated_at }}</small>
+
+<hr />
+<form action="/posts/{{ post.id }}/update" mehtod="post">
+    {% csrf_token %}
+    <input type="submit" value="수정하기" />
+</form>
+
+<form action="/posts/{{ post.id }}/delete" method="post">
+    {% csrf_token %}
+    <input type="submit" value="삭제하기" />
+</form>

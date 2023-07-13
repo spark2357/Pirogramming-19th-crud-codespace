@@ -1,0 +1,7 @@
+<a href="/posts/create/">글 작성하러 가기✏️</a>
+
+{% for post in posts %}
+<h3><a href="/posts/{{ post.pk }}">{{ post.title }}</a></h3>
+<p>{{ post.region }}</p>
+<hr />
+{% endfor %}
